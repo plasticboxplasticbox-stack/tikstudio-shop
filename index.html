@@ -68,8 +68,8 @@ h2{font-size:clamp(28px,3.6vw,40px);margin:0 0 8px;font-weight:800;text-align:ce
 .f .ic{width:48px;height:48px;border-radius:14px;display:grid;place-items:center;font-size:24px;margin-bottom:12px;background:linear-gradient(135deg,rgba(139,92,246,.3),rgba(236,72,153,.25))}
 .f h3{margin:0 0 6px;font-size:18px;font-weight:600}.f p{margin:0;color:var(--mu);font-size:14.5px}
 .gal{display:grid;grid-template-columns:240px 1fr;gap:18px;align-items:start}
-.gtabs{display:flex;flex-direction:column;gap:8px}
-.gt{text-align:left;border:1px solid var(--line);background:var(--card);color:var(--mu);font:inherit;font-size:15.5px;padding:12px 14px;border-radius:14px;cursor:pointer;transition:.15s}
+.gtabs{display:flex;flex-direction:column;gap:6px}
+.gt{text-align:left;border:1px solid var(--line);background:var(--card);color:var(--mu);font:inherit;font-size:14.5px;padding:8px 12px;border-radius:12px;cursor:pointer;transition:.15s}
 .gt:hover{color:#fff}.gt.on{color:#fff;background:linear-gradient(90deg,rgba(139,92,246,.35),rgba(236,72,153,.2));border-color:rgba(236,72,153,.4)}
 .gview{border-radius:18px;overflow:hidden;border:1px solid var(--line);background:#000;box-shadow:0 20px 60px rgba(0,0,0,.5)}
 .gview img{display:block;width:100%;aspect-ratio:1360/850;object-fit:cover;cursor:zoom-in}
@@ -247,7 +247,22 @@ label.l{display:block;font-size:14px;color:var(--mu);margin:14px 0 6px}
   $('#priceTxt').textContent = PRICE; $$('.pr').forEach(x => x.textContent = PRICE); $('#ftName').textContent = C.name || '';
 
   // ---- gallery
-  const G = [['home', '🏠 หน้าแรก', 'เชื่อมต่อไลฟ์ TikTok แล้วดูเหตุการณ์ในไลฟ์แบบสดๆ'], ['actions', '⚡ อีเว้นท์แอคชั่น', 'ของขวัญ/ใจ/คอมเมนต์ → สั่งให้เกิดอะไรก็ได้ แยกได้ 10 แผน'], ['win', '🏆 นับวิน', 'ตัวนับวินบนจอ ปรับสี ฟอนต์ ขนาดได้ทุกอย่าง'], ['spin', '🎰 สุ่มวิน', 'วงล้อสุ่มบวกลบวินจากของขวัญ'], ['timer', '⏱️ จับเวลา', 'นับถอยหลัง/นับขึ้น ของขวัญบวกลบเวลาได้'], ['special', '✨ โอเวอร์เลย์พิเศษ', 'แข่งส่งของขวัญ อันดับคนส่งเยอะ และอื่นๆ'], ['mc', '⛏️ มายคราฟ', 'เลือกแมพ กดรันเซิร์ฟ คนดูเล่นผ่านของขวัญได้ทันที'], ['games', '🎮 เกม', 'มินิเกมบนไลฟ์พร้อมหลอดความคืบหน้า'], ['don-home', '💸 เว็บโดเนท', 'ยอดโดเนทวันนี้ ทดสอบแจ้งเตือนได้'], ['don-acct', '💳 บัญชีรับเงิน', 'TrueMoney / พร้อมเพย์ / ธนาคาร พร้อม QR เปลี่ยนยอดอัตโนมัติ'], ['editor', '✂️ ตัดต่อรูป', 'ทำรูปปก รูปของขวัญ ป้ายต่างๆ']];
+  const G = [['home', '🏠 หน้าแรก', 'เชื่อมต่อไลฟ์ TikTok แล้วดูเหตุการณ์ในไลฟ์แบบสดๆ'],
+    ['actions', '⚡ อีเว้นท์แอคชั่น', 'ของขวัญ/ใจ/คอมเมนต์/แชร์/ฟอลโลว์ → สั่งให้เกิดอะไรก็ได้ แยกได้ 10 แผน'],
+    ['actions-add', '➕ สร้างอีเว้นท์แอคชั่น', 'กด “สร้างอีเว้นท์แอคชั่น” → เลือกเหตุการณ์ในไลฟ์ → เลือกสิ่งที่จะให้เกิด (เล่นเสียง รูป คลิป กดคีย์ คำสั่งมายคราฟ ฯลฯ)'],
+    ['sounds', '🔊 เสียง', 'ตั้งเสียงตามของขวัญ ฟอลโลว์ กดใจ หรือคอมเมนต์ ใส่ได้หลายไฟล์และสุ่มเสียงได้'],
+    ['sounds-add', '🎵 เพิ่มเสียง', 'เลือกเหตุการณ์ → ใส่ไฟล์เสียง MP3/WAV/OGG → ปรับความดัง จบ'],
+    ['win', '🏆 นับวิน', 'ตัวนับวินบนจอ ปรับสี ฟอนต์ ขนาดได้ทุกอย่าง'],
+    ['spin', '🎰 สุ่มวิน', 'วงล้อสุ่มบวกลบวินจากของขวัญ'],
+    ['timer', '⏱️ จับเวลา', 'นับถอยหลัง/นับขึ้น ของขวัญบวกลบเวลาได้'],
+    ['special', '✨ โอเวอร์เลย์พิเศษ', 'แข่งส่งของขวัญ (Coin Match) · คอมเมนต์ลอย · คนส่งของขวัญ — มีตัวอย่างโอเวอร์เลย์ให้ดูก่อนใช้'],
+    ['mc', '⛏️ มายคราฟ', 'เลือกแมพ กดรันเซิร์ฟ คนดูเล่นผ่านของขวัญได้ทันที'],
+    ['games', '🎮 เกม', 'มินิเกมบนไลฟ์พร้อมหลอดความคืบหน้า'],
+    ['don-home', '💸 เว็บโดเนท · บ้าน', 'ยอดโดเนทวันนี้ รายการโดเนท และทดสอบแจ้งเตือนได้'],
+    ['don-page', '🎨 เว็บโดเนท · หน้าโดเนท', 'แต่งหน้าเว็บโดเนทของตัวเอง แล้วกดอัปเดตขึ้นเว็บจริงได้เลย'],
+    ['don-widget', '📺 เว็บโดเนท · วิดเจ็ต', 'แจ้งเตือนโดเนทบนจอ เป้าโดเนท Top โดเนท และจับเวลาจากโดเนท'],
+    ['don-acct', '💳 เว็บโดเนท · บัญชีรับเงิน', 'TrueMoney / พร้อมเพย์ / ธนาคาร พร้อม QR เปลี่ยนยอดอัตโนมัติ และบอทตรวจสลิปฟรี'],
+    ['editor', '✂️ ตัดต่อรูป', 'ทำรูปปก รูปของขวัญ ป้ายต่างๆ']];
   const gt = $('#gtabs');
   const showG = (i) => { const g = G[i]; $('#gimg').src = 'img/' + g[0] + '.jpg'; $('#gcap').textContent = g[2]; $$('.gt').forEach((b, j) => b.classList.toggle('on', j === i)); };
   G.forEach((g, i) => { const b = document.createElement('button'); b.className = 'gt'; b.textContent = g[1]; b.onclick = () => showG(i); gt.appendChild(b); });
